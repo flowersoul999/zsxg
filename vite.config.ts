@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig(() => {
   return {
-    base: '/',
+    base: '/zsxg/',
     build: {
       sourcemap: false,
       assetsInlineLimit: 4096,
