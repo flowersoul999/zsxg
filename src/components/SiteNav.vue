@@ -33,47 +33,22 @@ const go = (path: string) => {
     </div>
   </nav>
 
-  <!-- 移动端：顶部横排按钮，尺寸与桌面端一致，放不下横向滑动 -->
-  <nav class="site-nav-mobile fixed top-3 left-0 right-0 z-50 md:hidden">
-    <div class="nav-scroll flex gap-2 overflow-x-auto px-4 py-1">
+  <!-- 移动端：单个胶囊容器内五等分，保留完整名称，缩小字号一行铺满，不滑动 -->
+  <nav class="fixed top-3 left-3 right-3 z-50 md:hidden">
+    <div class="flex gap-1 rounded-full bg-white/85 p-1 shadow-lg backdrop-blur">
       <button
         v-for="item in navItems"
         :key="item.path"
         @click="go(item.path)"
-        class="shrink-0 whitespace-nowrap rounded-full bg-white/85 px-5 py-2 font-bold text-blue-600 shadow-lg backdrop-blur transition-all duration-300"
-        :class="{ 'text-green-600 font-extrabold ring-1 ring-green-400/60': item.path === route.path }"
+        class="flex-1 min-w-0 overflow-hidden whitespace-nowrap rounded-full py-2 text-[clamp(10px,3.1vw,12px)] font-bold leading-none transition-colors duration-300"
+        :class="
+          item.path === route.path
+            ? 'bg-green-500 font-extrabold text-white'
+            : 'text-blue-600'
+        "
       >
         {{ item.name }}
       </button>
     </div>
   </nav>
 </template>
-
-<style scoped>
-/* 左右渐隐，暗示这一排可以横向滑动 */
-.site-nav-mobile {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 18px,
-    #000 calc(100% - 30px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 18px,
-    #000 calc(100% - 30px),
-    transparent 100%
-  );
-}
-
-.nav-scroll {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.nav-scroll::-webkit-scrollbar {
-  display: none;
-}
-</style>
