@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .vite
+
+# 本地临时产物（图片处理脚本、原图、校验截图）
+.tmp-font/
+
+# 工具与编辑器产生的本地数据
+.workbuddy/
