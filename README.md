@@ -1,43 +1,34 @@
-# 琢石寻光社会实践团网站
+# 琢石寻光社会实践团官网
 
-基于 Vue 3 + TypeScript + Vite 构建的社会实践团网站。
+基于 **Vue 3 + TypeScript + Vite + Tailwind CSS** 构建的社会实践团官方网站，承载团队展示、实践记录与文化传播。
 
-## 项目结构
+## 功能模块
 
-```
-src/
-├── pages/          # 页面组件
-├── router/         # 路由配置
-├── components/     # 通用组件
-├── assets/         # 静态资源
-└── style.css       # 全局样式
-```
+| 页面 | 说明 |
+|------|------|
+| 首页 `HomePage` | 团队形象与视觉主视觉展示 |
+| 寻光团队 `TeamPage` | 团队成员与组织架构介绍 |
+| 琢石纪事 `ChroniclesPage` | 社会实践活动记录 |
+| 灵石文化 `CulturePage` | 文化传承相关内容 |
+| 山海传音 `VoicePage` | 团队声音 / 感悟分享 |
 
 ## 技术栈
 
-- Vue 3 (Composition API)
+- Vue 3（Composition API）
 - TypeScript
 - Vite
-- Tailwind CSS
 - Vue Router
+- Tailwind CSS
+- 支持明暗主题切换（`composables/useTheme.ts`）
 
-## 运行项目
+## 本地开发
 
 ```bash
-# 安装依赖
 npm install
-
-# 开发模式
-npm run dev
-
-# 构建生产版本
-npm run build
+npm run dev      # 开发服务器
+npm run build    # 生产构建
 ```
 
-## 页面
+部署通过 `.github/workflows/deploy.yml` 的 GitHub Actions 自动完成。
 
-- 首页 - 团队展示背景图
-- 寻光团队 - 团队介绍
-- 琢石纪事 - 实践活动记录
-- 灵石文化 - 文化传承
-- 山海传音 - 团队声音
+> 早期单页版本见 [`zhuoshixunguang`](https://github.com/flowersoul999/zhuoshixunguang)。
